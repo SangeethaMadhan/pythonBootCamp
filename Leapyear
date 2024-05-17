@@ -1,0 +1,21 @@
+
+#program to find a year is a leap year or not
+
+# input year to be used to find leap year or not
+year = int(input("Year:"))
+
+# three conditions year%4==0; year%100!=0; year%400==0, should be satisfied or else year is not a leap year
+if (year % 4) == 0:
+  if (year % 100) == 0:
+    if (year % 400) == 0:
+      # if three conditions satisfied it is a leap year
+      print("The year is a leap year!")
+    else:
+      # if year % 400==0 condition not satisfied then it is a non leap year
+      print("The year is a not leap year!")
+  else:
+    # if year % 4==0 and year % 100 != 0 conditions satisfied then it is a leap year
+    print("The year is a leap year!")
+else:
+  # if only year % 4==0 condition satisfied then it is a non leap year
+  print("The year is not a leap year!")

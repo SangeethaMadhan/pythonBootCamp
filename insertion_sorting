@@ -1,0 +1,59 @@
+9,5,8,2,4
+2,9,5,8,4
+2,4,9,5,8
+2,4,5,9,8
+2,4,5,8,9
+2,4,5,8,9
+
+
+# Objective: To Arrange the array elements in ascending order.
+# Find the first minimum value in the array.
+    # Compare the first two numbers in the array and assign smallest number as minimum.
+    # If the minimum is greater than nearest element, store the nearest element as minimum 
+    # If the minimum is smaller than nearest element, minimum = minimum
+    # Likewise compare the minimum with every elements in an order.
+    # Then first minimum value can be found.
+# Minimum value stored in the variable minimum.
+# Minimum index stored in the variable min_index.
+# Right shift all the values present before minimum.
+    # list[minimum] = list[minimum-1]
+    # list[minimum-1] = list[minimum-2]
+    #.....
+    # list[start_index+1] = list[start_index]
+
+# Finally move the minimum value to 1st place (index 0)
+# Freeze the 1st value (index 0)
+# Increment start index and Repeat the steps upto the final value in the array.
+
+list = [9,5,8,2,4]
+start_index = 0 # assign start index as 0
+end = len(list)-1
+
+while start_index<end:
+    minimum = start_index # assign start_index to minimum
+    i = start_index + 1 # updating start index(minimum_index)
+
+    while i<len(list):
+        if list[minimum] > list[i]: #comparing minimum value with near element
+            minimum = i
+            
+        else:
+            minimum = minimum
+
+        i = i + 1
+
+    a = list[minimum] # assigning minimum value to 'a'
+
+    while minimum != start_index: # looping till start_index + 1
+        
+        list[minimum] = list[minimum-1] # shifting right, elements before minimum
+        print(list[minimum])
+        print(minimum)   
+        
+        minimum = minimum - 1 # decrementing mimimum index to shift all the elements before minimum
+    
+    list[start_index] = a # assign minimum value to start_index
+
+    start_index = start_index + 1 # updating start_index to freeze the found minimum values
+
+print("Sorted list:", list)

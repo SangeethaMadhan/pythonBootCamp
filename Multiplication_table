@@ -1,0 +1,11 @@
+def mul_table(num,a):
+    i=1
+    while i<=a:
+        print(i,'x',num,'=',i*num)
+        i=i+1
+    print('Table Printed')
+    return
+
+num = int(input("Which table do you want to print = "))
+a = int(input("How many rows do you need in table = "))
+print (mul_table(num,a))

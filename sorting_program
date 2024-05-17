@@ -1,0 +1,16 @@
+# program to assemble the values in an array from lower value to higher value
+arr = [52, 8, 73, 15, 65, 22, 35, 90, 44]
+
+# setting index as zero and minimum value as first element in array
+sorted = []
+
+
+# Setting wile loop with the length of array
+while len(arr)>0:
+        least = min(arr)
+        # adding the minimum value with the empty string
+        sorted = sorted + [least]
+        # remove the added value from the list 
+        arr.remove(least)
+
+print("Sorted Array:", sorted)

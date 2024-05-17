@@ -1,0 +1,19 @@
+# input to be reversed
+name = str(input("Enter the word to be reversed:"))
+
+# form an empty string
+reverse = ""
+# set i as length of input and another index as zero
+i = len(name) - 1
+index = 0
+
+# set an while loop as i greater than or equal to index index
+while i>=index:
+  
+  # input last index value is assigned to empty string
+  reverse = reverse + name[i]
+  # i value decremented from length of name to first value of index
+  i = i - 1
+
+# reversed output printed 
+print ("Reversed word:", reverse)

@@ -1,0 +1,43 @@
+# Program to find an element in an sorted array using binary search method - faster way to find a number in a list.
+# First know the total elements, set the left pointer to the first element of the array and the right pointer to the last element.
+# Find the mid index value and compare it with value to be found.If it matches break the loop and return True.
+# If the middle element is equal to the target value, return its index.
+# If the middle element is less than the target value, set the left pointer to the middle index + 1.
+# If the middle element is greater than the target value, set the right pointer to the middle index - 1.
+# If the target value is not found in the array, return False.
+
+def binary_search(arr, value):
+    low = 0
+    high = len(arr) - 1
+    mid = 0
+ 
+    while low <= high:
+ 
+        mid = (high + low) // 2
+ 
+        # If value is greater - ignore left side values
+        if arr[mid] < value:
+            low = mid + 1
+ 
+        # If value is smaller - ignore right side values
+        elif arr[mid] > value:
+            high = mid - 1
+ 
+        # means value is present at middle
+        else:
+            return mid
+ 
+    # If the value was not present
+    return False
+ 
+ 
+arr = [ 2, 3, 4, 10, 40, 55, 58, 62, 73, 86, 88, 92, 100, 102, 111, 123, 135, 143, 156 ]
+value = 88
+ 
+# Function call
+output = binary_search(arr, value)
+ 
+if output == False:
+    print("Element is not present in array")
+else:
+    print("Element is present in array at index", str(output))

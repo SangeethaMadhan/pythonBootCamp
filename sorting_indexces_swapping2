@@ -1,0 +1,31 @@
+# Program to sort an array using swapping indexces
+# First find the minimum value in the list and replace (swap) it with the 0th index value.
+# Likewise for next least value in the list to be found and swapped in the 1st index position and its value
+# Repeating the swapping until all the values in the list sorted in ascending order.
+
+# Pseudocode: Set an array to be sorted.
+# For swapping have 2 index i and j, where i is the first index so set value as 0
+# Index j will be the next to i index so j = i+1
+# Both index value compared in a loop of incrementing next index and if any smaller value found it is swapped to respective order
+
+
+list = [12,5,9,2,18,6]
+i = 0
+last = len(list)-1 # length of the list will be the value of last 
+
+while i<=last:
+    least = i
+    j = i+1 # updating to next index
+
+    while j<=last:
+        if list[least]>list[j]: # if next index has higher value assign j with mimimum value
+            least = j
+        j = j+1 # updating to next index
+
+    list[i], list[least] = list[least], list[i] # if least value found, replacing with idex
+    print(list[i], list[least])
+    i = i+1 # updating to next index
+
+
+print("Sorted list: ", list)
+

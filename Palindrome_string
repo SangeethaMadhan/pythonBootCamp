@@ -1,0 +1,21 @@
+# input string to be reversed
+string = input("Enter string : ") 
+
+# setting an empty string
+revstr = "" 
+ 
+# string value given for reverstring with 'for' loop 
+for i in string: 
+    # last index letter given to empty string
+    revstr = i + revstr 
+# reversed string is printed    
+print("Reversed string : ", revstr) 
+
+# checking whether input string and reversed string is same
+if(string == revstr): 
+    # palindrome if it is same
+    print("The string is a palindrome.") 
+else:
+    # palindrome if it is not same 
+    print("The string is not a palindrome.")
+

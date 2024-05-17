@@ -1,0 +1,35 @@
+
+# Program to sort an array using index swapping method - in decending order - minimum to maximum value.
+# Which don't require temporary variable to store the sorted output.
+# Find the minimum value in the array and swap its index with 0th index - min(arr) to 0th index
+# The value present at 0th index will be in the index position at the position where minimum value was there.
+# Likewise the 1th index value compared with all the other index value and 2nd least value swapped with 1st index value.
+# This looping continue till the last element in array.
+
+12,3,6,5,10,1
+1,3,6,5,10,12
+1,3,6,5,10,12
+1,3,5,6,10,12
+
+
+def sorting(list):
+    for i in range(len(list)):# loop for first element
+        for j in range(len(list)): # loop for first element with all the other element
+            if list[i] < list[j]:
+                list[j], list[i] = list[i], list[j] # swapps j with i if i is small
+            print(list) # prints loop step by step 
+        
+    return list # returns list
+
+list = [22,11,43,1,91]
+print(sorting(list)) # prints sorted list
+
+ 
+
+
+
+
+
+
+
+

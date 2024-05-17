@@ -1,0 +1,49 @@
+11,5,12,9,26,1,6
+1,5,12,9,26,11,6
+1,5,12,9,26,11,6
+1,5,6,9,26,11,12
+1,5,6,9,26,11,12
+1,5,6,9,11,26,12
+1,5,6,9,11,12,26
+1,5,6,9,11,12,26
+
+
+# Objective: To sort a list in an ascending order in the same list - smaller value to higher value
+# Find the minimum value in the list and replace(swap) it with the start (0th) index value
+    # Assigning minimum as first index value
+    # compare other(2nd) element with minimum value, if minimum greater then other value minimum = 2nd element else minimum=minimum
+    # update index
+    # find minimum value till the end of the list
+# And swap tha first minimum value with the start index value
+# Then update the start index (+1) and search from start to end
+# Find the second minimum value and swap it with start index.
+# Repeat the process till the length of list-1 equal to start index value
+
+list = [11,5,12,9,26,1,6]
+start_index = 0 # assign start index as 0
+end = len(list)-1
+
+while start_index<end:
+    minimum = start_index # assign start_index to minimum
+    i = start_index + 1 # updating start index(min_index)
+
+    while i<len(list):
+        if list[minimum] > list[i]: # by comparing minimum value with other elements find minuimum value
+            minimum = i
+            
+        else:
+            minimum = minimum
+
+        i = i + 1
+    print("Minimum element: ", list[minimum])
+    print("Minimum Index: ", minimum)
+
+    list[start_index], list[minimum] = list[minimum], list[start_index] # swapping minimum value with the start_index value
+
+    start_index = start_index + 1 # updating start_index
+
+print("List: ", list)
+ 
+
+
+
